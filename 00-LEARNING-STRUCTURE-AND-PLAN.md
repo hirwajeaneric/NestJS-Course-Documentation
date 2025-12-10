@@ -307,6 +307,17 @@ This comprehensive training program will take you from zero knowledge to hero le
 - **Mini Project**: Deploy to cloud platform
 - **Outcome**: Production deployment experience
 
+#### Module 07b: API Documentation with Scalar
+- **Topics**:
+  - Scalar installation and setup
+  - OpenAPI/Swagger integration
+  - Decorators and annotations
+  - Customization options
+  - Authentication documentation
+  - Best practices
+- **Mini Project**: Document a complete Blog API
+- **Outcome**: Beautiful, comprehensive API documentation
+
 ---
 
 ## 🚀 Main Project: E-Commerce Platform
@@ -423,7 +434,8 @@ learning-documentation/
 ├── 07-PRODUCTION-MONITORING/
 │   ├── 22-observability-monitoring.md
 │   ├── 23-security-performance.md
-│   └── 24-production-deployment.md
+│   ├── 24-production-deployment.md
+│   └── 07b-api-documentation-scalar.md
 └── PROJECTS/
     ├── main-project-ecommerce.md
     ├── mini-projects-index.md

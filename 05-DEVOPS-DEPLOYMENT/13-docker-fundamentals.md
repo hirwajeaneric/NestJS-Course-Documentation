@@ -1,4 +1,4 @@
-# Module 13: Docker Fundamentals
+   # Module 13: Docker Fundamentals
 
 ## 📚 Table of Contents
 1. [Overview](#overview)
@@ -165,6 +165,9 @@ FROM node:18-alpine
 
 # Step 2: Set working directory inside container
 # All subsequent commands run in this directory
+# Note: /app is a path INSIDE the container, not on your host machine
+# Your NestJS project structure (src/, test/, node_modules/) will be copied here
+# You can use any path like /usr/src/app, /opt/app, or /app - it's just a convention
 WORKDIR /app
 
 # Step 3: Copy package files
@@ -211,6 +214,15 @@ CMD ["node", "dist/main.js"]
 - `EXPOSE`: Documents which port the app uses
 - `ENV`: Sets environment variables
 - `CMD`: Default command to run when container starts
+
+**Important Note about WORKDIR:**
+The `WORKDIR /app` instruction creates a directory `/app` **inside the Docker container**, not on your host machine. This works perfectly fine with NestJS projects that have the typical structure:
+- `src/` - your source code
+- `test/` - your test files
+- `node_modules/` - dependencies
+- `package.json` - project configuration
+
+When you run `COPY . .`, Docker copies everything from your host directory (including `src/`, `test/`, etc.) into `/app` inside the container. The `/app` path is just a convention - you could use `/usr/src/app`, `/opt/app`, or any other path. What matters is that it's consistent throughout your Dockerfile.
 
 ### .dockerignore File
 
